@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0">
+<meta name="author"
+content="Ansh Maurya">
+<meta name="description"
+content="Cosmos Encyclopedia -
+Complete Space Encyclopedia
+by Ansh Maurya">
+<title>COSMOS ENCYCLOPEDIA
+| by Ansh Maurya</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+<link
+href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap"
+rel="stylesheet">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #0a0a0f;
+color: white;
+font-family: 'Exo 2', Arial;
+overflow-x: hidden;
+}
+
+/* STARS */
+.stars {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+pointer-events: none;
+}
+
+.star {
+position: absolute;
+background: white;
+border-radius: 50%;
+animation: twinkle 3s
+infinite alternate;
+}
+
+@keyframes twinkle {
+0% { opacity: 0.2; }
+100% { opacity: 1; }
+}
+
+/* NAVIGATION */
+nav {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(11,61,145,0.95);
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 1000;
+border-bottom: 2px solid #00d4ff;
+}
+
+.nav-logo {
+font-family: 'Orbitron', sans-serif;
+font-size: 20px;
+color: #00d4ff;
+letter-spacing: 3px;
+}
+
+.nav-links {
+display: flex;
+gap: 25px;
+list-style: none;
+}
+
+.nav-links a {
+color: white;
+text-decoration: none;
+font-size: 13px;
+letter-spacing: 1px;
+transition: color 0.3s;
+}
+
+.nav-links a:hover {
+color: #00d4ff;
+}
+
+.nav-credit {
+color: #fc3d21;
+font-size: 12px;
+}
+
+/* HERO SECTION */
+.hero {
+position: relative;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+overflow: hidden;
+z-index: 1;
+}
+
+.hero-bg {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0.4;
+z-index: -1;
+}
+
+.hero h1 {
+font-family: 'Orbitron', sans-serif;
+font-size: 48px;
+color: #00d4ff;
+letter-spacing: 4px;
+margin-bottom: 20px;
+text-shadow: 0 0 30px #00d4ff;
+animation: glow 2s infinite
+alternate;
+}
+
+@keyframes glow {
+from {
+text-shadow: 0 0 10px #00d4ff;
+}
+to {
+text-shadow: 0 0 40px #00d4ff,
+0 0 80px #0b3d91;
+}
+}
+
+.hero p {
+font-size: 18px;
+color: #cccccc;
+margin-bottom: 10px;
+max-width: 600px;
+}
+
+.hero-creator {
+color: #fc3d21;
+font-size: 14px;
+margin-bottom: 40px;
+letter-spacing: 2px;
+}
+
+.hero-buttons {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.btn {
+padding: 15px 35px;
+font-family: 'Orbitron', sans-serif;
+font-size: 13px;
+letter-spacing: 2px;
+border: none;
+cursor: pointer;
+border-radius: 3px;
+transition: all 0.3s;
+text-decoration: none;
+display: inline-block;
+}
+
+.btn-primary {
+background: #fc3d21;
+color: white;
+}
+
+.btn-primary:hover {
+background: #00d4ff;
+color: black;
+transform: scale(1.05);
+}
+
+.btn-secondary {
+background: transparent;
+color: #00d4ff;
+border: 2px solid #00d4ff;
+}
+
+.btn-secondary:hover {
+background: #00d4ff;
+color: black;
+transform: scale(1.05);
+}
+
+/* SECTION STYLES */
+.section {
+position: relative;
+padding: 80px 30px;
+text-align: center;
+z-index: 1;
+}
+
+.section-bg {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0.15;
+z-index: -1;
+}
+
+.section h2 {
+font-family: 'Orbitron', sans-serif;
+font-size: 32px;
+color: #00d4ff;
+margin-bottom: 15px;
+letter-spacing: 3px;
+}
+
+.section-subtitle {
+color: #999999;
+font-size: 16px;
+margin-bottom: 50px;
+}
+
+/* CARDS */
+.cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 25px;
+margin-top: 40px;
+}
+
+.card {
+background: linear-gradient(
+135deg,
+rgba(11,61,145,0.8),
+rgba(10,10,15,0.9)
+);
+border: 1px solid #00d4ff;
+border-radius: 10px;
+padding: 25px 20px;
+width: 260px;
+text-align: center;
+transition: all 0.3s;
+box-shadow: 0 0 15px
+rgba(0,212,255,0.1);
+}
+
+.card:hover {
+transform: translateY(-10px);
+border-color: #fc3d21;
+box-shadow: 0 0 30px
+rgba(252,61,33,0.3);
+}
+
+.card-icon {
+font-size: 40px;
+margin-bottom: 15px;
+}
+
+.card h3 {
+font-family: 'Orbitron', sans-serif;
+color: #00d4ff;
+font-size: 14px;
+margin-bottom: 10px;
+letter-spacing: 1px;
+}
+
+.card p {
+color: #cccccc;
+font-size: 13px;
+line-height: 1.6;
+}
+
+.card-agency {
+color: #fc3d21;
+font-size: 11px;
+margin-top: 10px;
+letter-spacing: 1px;
+}
+
+/* BANNER IMAGES */
+.banner-img {
+width: 100%;
+max-height: 300px;
+object-fit: cover;
+opacity: 0.7;
+border-top: 2px solid #00d4ff;
+border-bottom: 2px solid #00d4ff;
+}
+
+/* ISS SECTION */
+.iss-section {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 40px;
+flex-wrap: wrap;
+padding: 60px 30px;
+background: rgba(11,61,145,0.1);
+}
+
+.iss-image {
+width: 400px;
+max-width: 100%;
+border-radius: 10px;
+border: 2px solid #00d4ff;
+box-shadow: 0 0 30px
+rgba(0,212,255,0.3);
+}
+
+.iss-text {
+max-width: 400px;
+text-align: left;
+}
+
+.iss-text h2 {
+font-family: 'Orbitron', sans-serif;
+color: #00d4ff;
+font-size: 24px;
+margin-bottom: 15px;
+}
+
+.iss-text p {
+color: #cccccc;
+line-height: 1.8;
+margin-bottom: 10px;
+}
+
+/* DICTIONARY */
+.dict-card {
+background: rgba(11,61,145,0.3);
+border: 1px solid #00d4ff;
+border-radius: 8px;
+padding: 20px;
+width: 220px;
+text-align: left;
+transition: all 0.3s;
+}
+
+.dict-card:hover {
+background: rgba(11,61,145,0.6);
+transform: scale(1.03);
+}
+
+.dict-card h3 {
+font-family: 'Orbitron', sans-serif;
+color: #fc3d21;
+font-size: 13px;
+margin-bottom: 8px;
+}
+
+.dict-card p {
+color: #cccccc;
+font-size: 12px;
+line-height: 1.6;
+}
+
+/* ABOUT SECTION */
+.about-section {
+padding: 80px 30px;
+text-align: center;
+background: linear-gradient(
+135deg,
+rgba(11,61,145,0.2),
+rgba(10,10,15,0.9)
+);
+}
+
+.creator-name {
+font-family: 'Orbitron', sans-serif;
+font-size: 42px;
+color: #fc3d21;
+text-shadow: 0 0 30px #fc3d21;
+margin: 20px 0;
+letter-spacing: 5px;
+}
+
+.about-text {
+max-width: 600px;
+margin: 0 auto;
+color: #cccccc;
+line-height: 1.9;
+font-size: 15px;
+}
+
+.stats {
+display: flex;
+justify-content: center;
+gap: 40px;
+flex-wrap: wrap;
+margin-top: 40px;
+}
+
+.stat {
+text-align: center;
+}
+
+.stat-number {
+font-family: 'Orbitron', sans-serif;
+font-size: 36px;
+color: #00d4ff;
+}
+
+.stat-label {
+color: #999999;
+font-size: 12px;
+letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+background: #0b3d91;
+text-align: center;
+padding: 40px 30px;
+border-top: 2px solid #00d4ff;
+}
+
+footer h3 {
+font-family: 'Orbitron', sans-serif;
+color: #00d4ff;
+font-size: 20px;
+margin-bottom: 15px;
+}
+
+footer p {
+color: #cccccc;
+font-size: 13px;
+margin: 5px 0;
+}
+
+.footer-credit {
+color: #fc3d21;
+font-size: 15px;
+margin-top: 15px;
+letter-spacing: 2px;
+}
+
+/* DIVIDER */
+.divider {
+height: 2px;
+background: linear-gradient(
+90deg,
+transparent,
+#00d4ff,
+transparent
+);
+margin: 0;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+.hero h1 { font-size: 28px; }
+.nav-links { display: none; }
+.iss-text { text-align: center; }
+.creator-name { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANIMATED STARS -->
+<div class="stars" id="stars"></div>
+
+<!-- NAVIGATION -->
+<nav>
+<div class="nav-logo">
+🚀 COSMOS ENCYCLOPEDIA
+</div>
+<ul class="nav-links">
+<li><a href="#spacecraft">
+SPACECRAFT</a></li>
+<li><a href="#research">
+RESEARCH</a></li>
+<li><a href="#iss">ISS</a></li>
+<li><a href="#dictionary">
+DICTIONARY</a></li>
+<li><a href="#about">ABOUT</a></li>
+</ul>
+<div class="nav-credit">
+by Ansh Maurya
+</div>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="hero">
+<img
+src="hero-space.jpg"
+alt="Space Hero"
+class="hero-bg">
+<h1>COSMOS ENCYCLOPEDIA</h1>
+<p>The Complete Encyclopedia of
+Human Space Achievement</p>
+<p class="hero-creator">
+✦ DESIGNED & DEVELOPED BY
+ANSH MAURYA ✦
+</p>
+<div class="hero-buttons">
+<a href="#spacecraft"
+class="btn btn-primary">
+EXPLORE SPACECRAFT
+</a>
+<a href="#research"
+class="btn btn-secondary">
+SPACE RESEARCH
+</a>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SPACECRAFT SECTION -->
+<div class="section" id="spacecraft">
+<img
+src="spacecraft-banner.jpg"
+alt="Spacecraft Banner"
+class="section-bg">
+<h2>🛸 SPACECRAFT ENCYCLOPEDIA</h2>
+<p class="section-subtitle">
+Every Spacecraft Ever Built
+By Humanity
+</p>
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">🚀</div>
+<h3>APOLLO 11</h3>
+<p>First crewed Moon landing
+in human history</p>
+<p class="card-agency">
+NASA • 1969
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🔭</div>
+<h3>HUBBLE TELESCOPE</h3>
+<p>Revolutionary space telescope
+capturing universe images</p>
+<p class="card-agency">
+NASA • 1990
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🛰️</div>
+<h3>VOYAGER 1</h3>
+<p>Furthest human made object
+in interstellar space</p>
+<p class="card-agency">
+NASA • 1977
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🌙</div>
+<h3>CHANDRAYAAN 3</h3>
+<p>First landing on
+Moon South Pole</p>
+<p class="card-agency">
+ISRO • 2023
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🔬</div>
+<h3>JAMES WEBB</h3>
+<p>Most powerful space
+telescope ever built</p>
+<p class="card-agency">
+NASA • 2021
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🤖</div>
+<h3>PERSEVERANCE</h3>
+<p>Active Mars rover searching
+for ancient life</p>
+<p class="card-agency">
+NASA • 2020
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🌌</div>
+<h3>MANGALYAAN</h3>
+<p>India first Mars mission
+successful orbit</p>
+<p class="card-agency">
+ISRO • 2013
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">⚡</div>
+<h3>FALCON HEAVY</h3>
+<p>Most powerful operational
+rocket in the world</p>
+<p class="card-agency">
+SPACEX • 2018
+</p>
+</div>
+
+</div>
+</div>
+
+<img
+src="spacecraft-banner.jpg"
+alt="Banner"
+class="banner-img">
+
+<!-- RESEARCH SECTION -->
+<div class="section" id="research">
+<img
+src="research-banner.jpg"
+alt="Research Banner"
+class="section-bg">
+<h2>🔬 SPACE RESEARCH</h2>
+<p class="section-subtitle">
+Frontiers of Human Space Science
+</p>
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">⭐</div>
+<h3>ASTROPHYSICS</h3>
+<p>Study of stars galaxies
+black holes and the
+origin of universe</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🧬</div>
+<h3>ASTROBIOLOGY</h3>
+<p>Search for life beyond
+Earth on other planets
+and moons</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🪐</div>
+<h3>PLANETARY SCIENCE</h3>
+<p>Study of planets moons
+asteroids and our
+solar system</p>
+</div>
+
+<div class="card">
+<div class="card-icon">💊</div>
+<h3>SPACE MEDICINE</h3>
+<p>Human health research
+in zero gravity space
+environment</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🚀</div>
+<h3>PROPULSION</h3>
+<p>Development of advanced
+rocket engines for
+deep space travel</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🌍</div>
+<h3>EARTH OBSERVATION</h3>
+<p>Monitoring climate weather
+and environment from
+space satellites</p>
+</div>
+
+</div>
+</div>
+
+<img
+src="research-banner.jpg"
+alt="Banner"
+class="banner-img">
+
+<!-- ISS SECTION -->
+<div class="iss-section" id="iss">
+<img
+src="iss-space.jpg"
+alt="International Space Station"
+class="iss-image">
+<div class="iss-text">
+<h2>🛸 INTERNATIONAL
+SPACE STATION</h2>
+<p>The International Space Station
+is a modular space station in
+low Earth orbit. It is a
+multinational collaborative
+project involving five
+space agencies.</p>
+<p>Orbiting at an altitude of
+approximately 408 kilometers
+the ISS travels at 28000
+kilometers per hour completing
+16 orbits per day.</p>
+<p style="color:#00d4ff;
+margin-top:15px;">
+Continuously inhabited since
+November 2000
+</p>
+</div>
+</div>
+
+<img
+src="mars-rover.jpg"
+alt="Mars Rover"
+class="banner-img">
+
+<!-- DICTIONARY SECTION -->
+<div class="section" id="dictionary">
+<h2>📖 SPACE DICTIONARY</h2>
+<p class="section-subtitle">
+Key Terms of Space Science
+Explained Simply
+</p>
+<div class="cards">
+
+<div class="dict-card">
+<h3>BLACK HOLE</h3>
+<p>A region in space where
+gravity is so strong that
+nothing not even light
+can escape from it</p>
+</div>
+
+<div class="dict-card">
+<h3>LIGHT YEAR</h3>
+<p>The distance that light
+travels in one year
+approximately 9.46 trillion
+kilometers</p>
+</div>
+
+<div class="dict-card">
+<h3>NEBULA</h3>
+<p>A giant cloud of gas and
+dust in space where new
+stars are born</p>
+</div>
+
+<div class="dict-card">
+<h3>ORBIT</h3>
+<p>The curved path that an
+object takes around another
+object due to gravity</p>
+</div>
+
+<div class="dict-card">
+<h3>SUPERNOVA</h3>
+<p>A powerful explosion of
+a massive star at the
+end of its life</p>
+</div>
+
+<div class="dict-card">
+<h3>DARK MATTER</h3>
+<p>Invisible matter that makes
+up 27 percent of the
+total universe</p>
+</div>
+
+<div class="dict-card">
+<h3>EXOPLANET</h3>
+<p>A planet that orbits a
+star outside our own
+solar system</p>
+</div>
+
+<div class="dict-card">
+<h3>SOLAR WIND</h3>
+<p>Stream of charged particles
+released from the upper
+atmosphere of the Sun</p>
+</div>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT SECTION -->
+<div class="about-section" id="about">
+<h2 style="
+font-family: Orbitron, sans-serif;
+color: #00d4ff;
+letter-spacing: 3px;
+font-size: 14px;">
+MEET THE CREATOR
+</h2>
+<div class="creator-name">
+ANSH MAURYA
+</div>
+<p class="about-text">
+Cosmos Encyclopedia is a passion
+project dedicated to making space
+education accessible to everyone
+around the world. This website
+covers every spacecraft mission
+agency and space term in human
+history completely free for
+all space enthusiasts.
+</p>
+
+<div class="stats">
+<div class="stat">
+<div class="stat-number">200+</div>
+<div class="stat-label">
+SPACECRAFT LISTED
+</div>
+</div>
+<div class="stat">
+<div class="stat-number">500+</div>
+<div class="stat-label">
+SPACE TERMS
+</div>
+</div>
+<div class="stat">
+<div class="stat-number">15+</div>
+<div class="stat-label">
+AGENCIES COVERED
+</div>
+</div>
+<div class="stat">
+<div class="stat-number">100+</div>
+<div class="stat-label">
+MISSIONS TRACKED
+</div>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<h3>🚀 COSMOS ENCYCLOPEDIA</h3>
+<p>The Complete Encyclopedia of
+Human Space Achievement</p>
+<p>Making space education
+accessible to everyone</p>
+<div class="footer-credit">
+© 2024 | Designed & Developed by
+ANSH MAURYA
+</div>
+</footer>
+
+<!-- STARS SCRIPT -->
+<script>
+const starsContainer =
+document.getElementById('stars');
+
+for(let i = 0; i < 250; i++) {
+const star =
+document.createElement('div');
+star.classList.add('star');
+
+const size =
+Math.random() * 3 + 1 + 'px';
+
+star.style.cssText =
+'left:' +
+Math.random() * 100 + 'vw;' +
+'top:' +
+Math.random() * 100 + 'vh;' +
+'width:' + size + ';' +
+'height:' + size + ';' +
+'animation-delay:' +
+Math.random() * 3 + 's;' +
+'animation-duration:' +
+(Math.random() * 3 + 2) + 's;';
+
+starsContainer.appendChild(star);
+}
+</script>
+
+</body>
+</html>
